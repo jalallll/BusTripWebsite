@@ -11,7 +11,7 @@
     $largest_id_query = "SELECT MAX(tripid) FROM bustrip";
     $largest_id = mysqli_query($connection, $largest_id_query);
     $new_id = 34;
-    $add_data_query = "INSERT INTO bustrip (tripid, tripname, startdate, enddaste, country, licenseplatenumber) VALUES ('$new_id','$name', '$start', '$end', '$country', '$license_plate')";
+    $add_data_query = "INSERT INTO bustrip (tripid, tripname, startdate, enddate, country, licenseplatenumber) VALUES ('$new_id','$name', '$start', '$end', '$country', '$license_plate')";
     $add_data_res = mysqli_query($connection, $add_data_query);
 
     if (!$add_data_res) {
