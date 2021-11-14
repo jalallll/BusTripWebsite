@@ -10,7 +10,7 @@
     $license_plate = $_POST['input_license_plate'];
     $largest_id_query = "SELECT MAX(tripid) FROM bustrip";
     $largest_id = mysqli_query($connection, $largest_id_query);
-    $new_id = 34;
+    $new_id = $largest_id + 1;
     $add_data_query = "INSERT INTO bustrip (tripid, tripname, startdate, enddate, country, licenseplatenumber) VALUES ('$new_id','$name', '$start', '$end', '$country', '$license_plate')";
     $add_data_res = mysqli_query($connection, $add_data_query);
 
