@@ -10,12 +10,16 @@
 		<?php include 'connectdb.php';?>
 		<h1>Assignment 3</h1>
 		<?php include 'getdata.php';?>
-		<h2>Order Country By:</h2>
 		<form method="POST" action="order.php">
-			<input type="radio" name="radio_btn" value="Ascending" checked>Ascending
+			<h2>Order By Country:</h2>
+			<input type="radio" name="country_btn" value="Ascending" checked>Ascending
+			<input type="radio" name="country_btn" value="Descending">Descending
 			<br> 
-			<input type="radio" name="radio_btn" value="Descending">Descending
+			<h2>Order By Trip Name:</h2>
+			<input type="radio" name="trip_name_btn" value="Ascending" checked>Ascending
+			<input type="radio" name="trip_name_btn" value="Descending">Descending
 			<input type="submit" value="Result" name="Result"> 
 		</form>
+		
 	</body>
 </html>

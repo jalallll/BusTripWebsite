@@ -17,18 +17,27 @@ if (mysqli_connect_errno()) {
 
 
 
-$radio_btn_val = $_POST["radio_btn"];
+$country_btn_val = $_POST["country_btn"];
+
+$trip_name_btn_val = $_POST["trip_name_btn"];
 
 
 
-
-if($radio_btn_val == "Ascending"){
+if($country_btn_val == "Ascending" && $trip_name_btn_val == "Ascending"){
     echo "Ascending";
-    $query = "SELECT * FROM bustrip ORDER BY country ASC";
+    $query = "SELECT * FROM bustrip ORDER BY country ASC, tripname ASC";
 }
-else if($radio_btn_val == "Descending"){
+else if($country_btn_val == "Descending" && $trip_name_btn_val == "Ascending"){
     echo "Descending";
-    $query = "SELECT * FROM bustrip ORDER BY country DESC";
+    $query = "SELECT * FROM bustrip ORDER BY country DESC , tripname ASC";
+}
+else if($country_btn_val == "Descending" && $trip_name_btn_val == "Descending"){
+    echo "Descending";
+    $query = "SELECT * FROM bustrip ORDER BY country DESC , tripname DESC";
+}
+else if($country_btn_val == "Ascending" && $trip_name_btn_val == "Descending"){
+    echo "Descending";
+    $query = "SELECT * FROM bustrip ORDER BY country ASC , tripname DESC";
 }
 $result = mysqli_query($connection,$query);
 if (!$result) {
