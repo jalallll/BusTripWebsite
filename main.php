@@ -8,7 +8,14 @@
 	</head>
 	<body>
 		<?php include 'connectdb.php';?>
-		<h1>Test</h1>
+		<h1>Assignment 3</h1>
 		<?php include 'getdata.php';?>
+		<h2>Order Country By:</h2>
+		<form method="POST" action="order.php">
+			<input type="radio" name="radio_btn" value="Ascending" checked>Ascending
+			<br> 
+			<input type="radio" name="radio_btn" value="Descending">Descending
+			<input type="submit" value="Result" name="Result"> 
+		</form>
 	</body>
 </html>
