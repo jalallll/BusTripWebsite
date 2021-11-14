@@ -22,10 +22,14 @@
 		</form>
 		
 		<form method="POST" action="editdata.php">
-			<input type="text" name="input_trip_id">Enter The Trip ID For the Row You Want To Edit
-			<input type="text" name="input_trip_name">New Trip Name
-			<input type="text" name="input_start_date">New Trip Start Date
-			<input type="text" name="input_end_date">New Trip End Date
+			<label>Enter The Trip ID For the Row You Want To Edit</label>
+			<input type="text" name="input_trip_id">
+			<label>New Trip Name</label>
+			<input type="text" name="input_trip_name">
+			<label>New Trip Start Date</label>
+			<input type="text" name="input_start_date">
+			<label>New Trip End Date</label>
+			<input type="text" name="input_end_date">
 			<input type="submit" value="submit_edit" name="Result"> 
 		</form>
 	</body>
