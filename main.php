@@ -21,16 +21,20 @@
 			<input type="submit" value="Result" name="Result"> 
 		</form>
 		
-		<form method="POST" action="editdata.php">
-			<label>Enter The Trip ID For the Row You Want To Edit</label>
-			<input type="text" name="input_trip_id">
-			<label>New Trip Name</label>
+		<?php require_once 'addData.php'; ?>
+		<form method="POST" action="addData.php">
+			<label>Add New Bus Trip</label>
+			<label>Trip Name</label>
 			<input type="text" name="input_trip_name">
-			<label>New Trip Start Date</label>
+			<label>Start Date</label>
 			<input type="text" name="input_start_date">
-			<label>New Trip End Date</label>
+			<label>End Date</label>
 			<input type="text" name="input_end_date">
-			<input type="submit" value="submit_edit" name="Result"> 
+			<label>Country</label>
+			<input type="text" name="input_country">
+			<label>License Plate Number</label>
+			<input type="text" name="input_license_plate">
+			<input type="submit" value="Add" name="add_trip"> 
 		</form>
 	</body>
 </html>
