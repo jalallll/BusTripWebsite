@@ -29,6 +29,15 @@ if($input_trip_id != ""){
         die("databases query failed.");
     }
     if ($result ){
+        echo "Successful update";
+    }
+}
+$query = "SELECT * FROM bustrip";
+    $result = mysqli_query($connection,$query);
+    if (!$result) {
+        die("databases query failed.");
+    }
+    if ($result ){
         echo "<table> <tr> <th>Tripid</th> <th>Trip Name</th> <th>Start Date</th> <th>End Date</th> <th>Country</th> <th>License Plate</th> </tr>";
 
         while ($row = mysqli_fetch_assoc($result)) {
@@ -37,6 +46,4 @@ if($input_trip_id != ""){
         mysqli_free_result($result);
         echo "</table>";
     }
-}
-
 ?>
