@@ -23,6 +23,8 @@
 
 		<form method="POST" action="addData.php">
 			<label>Add New Bus Trip</label>
+			<label>Trip ID (Unique)_</label>
+			<input type="text" name="input_trip_id">
 			<label>Trip Name</label>
 			<input type="text" name="input_trip_name">
 			<label>Start Date</label>

@@ -8,13 +8,14 @@
     $end = $_POST['input_end_date'];
     $country = $_POST['input_country'];
     $license_plate = $_POST['input_license_plate'];
-    $largest_id_query = "SELECT MAX(tripid) FROM bustrip";
-    $largest_id = mysqli_query($connection, $largest_id_query);
-    while ($row = mysqli_fetch_assoc($largest_id)){
-        $new_id = $row['tripid'];
-        echo $new_id;
+    $id = $_POST['input_trip_id'];
+    $add_data_query = "INSERT INTO bustrip (tripid, tripname, startdate, enddate, country, licenseplatenumber) VALUES ('$id','$name', '$start', '$end', '$country', '$license_plate')";
+    $add_data_res = mysqli_query($connection, $add_data_query);
 
+    if (!$add_data_res) {
+        die("Failed Insert");
+    } else{
+        echo "Successful Insert";
     }
-    
 }
 ?>
