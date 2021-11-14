@@ -5,8 +5,18 @@ $result = mysqli_query($connection,$query);
 if (!$result) {
     die("databases query failed.");
 }
-echo "<table> <tr> <th>Tripid</th> <th>Trip Name</th> <th>Start Date</th> <th>End Date</th> <th>Country</th> <th>License Plate</th> </tr>";
+?>
+<table> 
+    <tr> 
+        <th>Tripid</th> 
+        <th>Trip Name</th> 
+        <th>Start Date</th> 
+        <th>End Date</th> 
+        <th>Country</th> 
+        <th>License Plate</th> 
+    </tr>
 
+<?php 
 while ($row = mysqli_fetch_assoc($result)): ?>
     <tr>
         <td>
