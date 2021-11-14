@@ -15,7 +15,7 @@ if (mysqli_connect_errno()) {
 
 if(isset($_GET['delete'])){
     $id = $_GET['delete'];
-    $connection->query("DELETE FROM bustrip WHERE id='$id'");
+    $connection->query("DELETE FROM bustrip WHERE tripid='$id'");
 
 }
 
