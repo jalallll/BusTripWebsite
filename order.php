@@ -23,6 +23,7 @@ $trip_name_btn_val = $_POST["trip_name_btn"];
 
 
 
+
 if($country_btn_val == "Ascending" && $trip_name_btn_val == "Ascending"){
     echo "Order By: Country (ASC), Trip Name (ASC) <br>";
     $query = "SELECT * FROM bustrip ORDER BY country ASC, tripname ASC";

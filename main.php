@@ -21,5 +21,12 @@
 			<input type="submit" value="Result" name="Result"> 
 		</form>
 		
+		<form method="POST" action="editdata.php">
+			<input type="text" name="input_trip_id">Enter The Trip ID For the Row You Want To Edit
+			<input type="text" name="input_trip_name">New Trip Name
+			<input type="text" name="input_start_date">New Trip Start Date
+			<input type="text" name="input_end_date">New Trip End Date
+			<input type="submit" value="submit_edit" name="Result"> 
+		</form>
 	</body>
 </html>
