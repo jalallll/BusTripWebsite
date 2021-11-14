@@ -20,8 +20,7 @@
 			<input type="radio" name="trip_name_btn" value="Descending">Descending
 			<input type="submit" value="Result" name="Result"> 
 		</form>
-		
-		<?php require_once 'addData.php'; ?>
+
 		<form method="POST" action="addData.php">
 			<label>Add New Bus Trip</label>
 			<label>Trip Name</label>
