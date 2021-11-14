@@ -24,19 +24,19 @@ $trip_name_btn_val = $_POST["trip_name_btn"];
 
 
 if($country_btn_val == "Ascending" && $trip_name_btn_val == "Ascending"){
-    echo "Ascending";
+    echo "Order By: Country (ASC), Trip Name (ASC)";
     $query = "SELECT * FROM bustrip ORDER BY country ASC, tripname ASC";
 }
 else if($country_btn_val == "Descending" && $trip_name_btn_val == "Ascending"){
-    echo "Descending";
+    echo "Order By: Country (DSC), Trip Name (ASC)";
     $query = "SELECT * FROM bustrip ORDER BY country DESC , tripname ASC";
 }
 else if($country_btn_val == "Descending" && $trip_name_btn_val == "Descending"){
-    echo "Descending";
+    echo "Order By: Country (DSC), Trip Name (DSC)";
     $query = "SELECT * FROM bustrip ORDER BY country DESC , tripname DESC";
 }
 else if($country_btn_val == "Ascending" && $trip_name_btn_val == "Descending"){
-    echo "Descending";
+    echo "Order By: Country (ASC), Trip Name (DSC)";
     $query = "SELECT * FROM bustrip ORDER BY country ASC , tripname DESC";
 }
 $result = mysqli_query($connection,$query);
