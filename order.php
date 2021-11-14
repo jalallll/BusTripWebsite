@@ -23,16 +23,14 @@ $radio_btn_val = $_POST["radio_btn"];
 
 
 if($radio_btn_val == "Ascending"){
-    echo "ascending";
+    echo "Ascending";
     $query = "SELECT * FROM bustrip ORDER BY country ASC";
-    $result = mysqli_query($connection,$query);
 }
 else if($radio_btn_val == "Descending"){
-    echo "descending";
+    echo "Descending";
     $query = "SELECT * FROM bustrip ORDER BY country DESC";
-    $result = mysqli_query($connection,$query);
 }
-
+$result = mysqli_query($connection,$query);
 if (!$result) {
     die("databases query failed.");
 }
