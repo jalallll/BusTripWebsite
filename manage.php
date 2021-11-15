@@ -99,6 +99,8 @@ if(isset($_GET['update'])){
         $trip_country = $row['country'];
         $trip_license_plate = $row['licenseplatenumber'];
         $btn_val = "Update";
+        header("location: main.php");
+
     }
 }
 
