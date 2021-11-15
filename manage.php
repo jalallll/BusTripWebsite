@@ -89,7 +89,7 @@ if(isset($_GET['delete'])){
 }
 if(isset($_GET['update'])){
     $id = $_GET['update'];
-    $res = $DB->query("SELECT * FROM bustrip WHERE id='$id'");
+    $res = $DB->query("SELECT * FROM bustrip WHERE tripid='$id'");
     if(count($res)>0){
         $row = mysqli_fetch_assoc($result);
         $trip_id = $row['tripid'];
