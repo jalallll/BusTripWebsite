@@ -61,12 +61,16 @@ if(isset($_POST['order-by'])){
         $query = "SELECT * FROM bustrip ORDER BY country ASC , tripname DESC";
         $_SESSION['bustrip_order']= $query; 
     }
+    header("location: main.php");
+
    
 }
 if(isset($_POST['fetch_trips_by_country'])){
     $country = $_POST['select_country'];
     $query = "SELECT * FROM bustrip WHERE country='$country'";
     $_SESSION['bustrip_order']= $query; 
+    header("location: main.php");
+
     
 }
 
