@@ -86,7 +86,7 @@ if(isset($_POST['fetch_trips_by_country'])){
 		</form>
 		<br> 
 		<br> 
-		<form method="POST" action="manage.php">
+		<form method="POST" action="main.php">
 			<label>Select All Bus Trips From Specific Country</label>
 			<br>
 			<input type="text" name="select_country">
