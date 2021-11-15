@@ -1,4 +1,6 @@
-<?php 
+<?php
+session_start();
+$_SESSION['bustrip_order']="SELECT * FROM bustrip";  
 if(isset($_POST['order-by'])){
     $country_btn_val = $_POST["country_btn"];
     $trip_name_btn_val = $_POST["trip_name_btn"];
@@ -45,8 +47,7 @@ if(isset($_POST['fetch_trips_by_country'])){
 	<body>
 		<h1>Assignment 3</h1>
 		<?php
-		session_start();
-		$_SESSION['bustrip_order']="SELECT * FROM bustrip"; 
+		
 		include 'getdata.php';
 		?>
 		<form method="POST" action="main.php">
