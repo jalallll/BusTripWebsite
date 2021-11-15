@@ -16,7 +16,7 @@ session_start();
 		<?php
 		
 		include_once 'getdata.php';
-		include 'manage.php';
+		require_once 'manage.php';
 		?>
 		<form method="POST" action="manage.php">
 			<h2>Order By Country:</h2>
