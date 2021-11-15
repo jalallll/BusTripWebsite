@@ -45,10 +45,10 @@ while ($row = mysqli_fetch_assoc($result)): ?>
             <?php echo $row['licenseplatenumber']; ?>
         </td>
         <td>
-            <a href="manage.php?delete=<?php echo $row['tripid']; ?>">Delete</a>
+            <a href="main.php?delete=<?php echo $row['tripid']; ?>">Delete</a>
         </td>
         <td>
-            <a href="manage.php?update=<?php echo $row['tripid']; ?>">Update</a>
+            <a href="main.php?update=<?php echo $row['tripid']; ?>">Update</a>
         </td>
 
         </td>
