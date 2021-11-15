@@ -9,7 +9,7 @@
 	<body>
 		<h1>Assignment 3</h1>
 		<?php include 'getdata.php';?>
-		<form method="POST" action="order.php">
+		<form method="POST" action="manage.php">
 			<h2>Order By Country:</h2>
 			<input type="radio" name="country_btn" value="Ascending" checked>Ascending
 			<input type="radio" name="country_btn" value="Descending">Descending
@@ -17,7 +17,7 @@
 			<h2>Order By Trip Name:</h2>
 			<input type="radio" name="trip_name_btn" value="Ascending" checked>Ascending
 			<input type="radio" name="trip_name_btn" value="Descending">Descending
-			<input type="submit" value="Result" name="Result"> 
+			<input type="submit" value="Result" name="order-by"> 
 		</form>
 
 		<form method="POST" action="manage.php">
