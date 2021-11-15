@@ -91,7 +91,7 @@ if(isset($_GET['update'])){
     $id = $_GET['update'];
     $res = $DB->query("SELECT * FROM bustrip WHERE tripid='$id'");
     if(count($res)>0){
-        $row = mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_assoc($res);
         $trip_id = $row['tripid'];
         $trip_name = $row['tripname'];
         $trip_start = $row['startdate'];
