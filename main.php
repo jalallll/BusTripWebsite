@@ -17,7 +17,7 @@ $_SESSION['bustrip_order']="SELECT * FROM bustrip";
 		<?php
 		
 		include_once 'getdata.php';
-		include_once 'manage.php';
+		include 'manage.php';
 		?>
 		<form method="POST" action="manage.php">
 			<h2>Order By Country:</h2>
