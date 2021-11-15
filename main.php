@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['bustrip_order']="SELECT * FROM bustrip";  
 
 ?>
 
