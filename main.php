@@ -31,26 +31,26 @@ session_start();
 		<br> 
 		<br> 
 		<form method="POST" action="manage.php">
-			<label>Add New Bus Trip</label>
+			<label>Bus Trip</label>
 			<br> 
 			<label>Trip ID (Unique)</label>
-			<input type="text" name="input_trip_id">
+			<input type="text" value="<?php echo $trip_id; ?>" name="input_trip_id">
 			<br>
 			<label>Trip Name</label>
-			<input type="text" name="input_trip_name">
+			<input type="text" value="<?php echo $trip_name; ?>" name="input_trip_name">
 			<br>
 			<label>Start Date</label>
-			<input type="text" name="input_start_date">
+			<input type="text" value="<?php echo $trip_start; ?>" name="input_start_date">
 			<br>
 			<label>End Date</label>
-			<input type="text" name="input_end_date">
+			<input type="text" value="<?php echo $trip_end; ?>" name="input_end_date">
 			<br>
 			<label>Country</label>
-			<input type="text" name="input_country">
+			<input type="text" value="<?php echo $trip_country; ?>" name="input_country">
 			<br>
 			<label>License Plate Number</label>
-			<input type="text" name="input_license_plate">
-			<input type="submit" value="Add" name="add_trip"> 
+			<input type="text" value="<?php echo $trip_license_plate; ?>" name="input_license_plate">
+			<input type="submit" value="<?php echo $btn_val; ?>" name="add_trip"> 
 		</form>
 		<br> 
 		<br> 
