@@ -5,8 +5,9 @@ require "Database.php";
 
 $DB = Database::connect();
 
+$query = $_SESSION['bustrip_order'];
 
-$result = $DB->query("SELECT * FROM bustrip");
+$result = $DB->query($query);
 if (!$result) {
     die("databases query failed.");
 }

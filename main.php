@@ -8,7 +8,11 @@
 	</head>
 	<body>
 		<h1>Assignment 3</h1>
-		<?php include 'getdata.php';?>
+		<?php
+		session_start();
+		$_SESSION['bustrip_order']="SELECT * FROM bustrip"; 
+		include 'getdata.php';
+		?>
 		<form method="POST" action="manage.php">
 			<h2>Order By Country:</h2>
 			<input type="radio" name="country_btn" value="Ascending" checked>Ascending
@@ -50,6 +54,10 @@
 			<br>
 			<input type="text" name="select_country">
 			<input type="submit" value="Fetch" name="fetch_trips_by_country"> 
+		</form>
+		<form method="POST" action="manage.php">
+			
+			<input type="submit" value="Create Booking" name="add_booking">
 		</form>
 	</body>
 </html>
