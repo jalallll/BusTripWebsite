@@ -6,6 +6,7 @@ require "Database.php";
 $DB = Database::connect();
 
 $query = $_SESSION['bustrip_order'];
+echo $query;
 
 $result = $DB->query($query);
 if (!$result) {
