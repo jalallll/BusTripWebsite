@@ -2,7 +2,7 @@
 
 session_start();
 
-require "Database.php";
+require_once "Database.php";
 
 $DB = Database::connect();
 
