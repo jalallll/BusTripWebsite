@@ -6,7 +6,39 @@ require "Database.php";
 
 $DB = Database::connect();
 
+if(isset($_POST['order-by'])){
+    $country_btn_val = $_POST["country_btn"];
+    $trip_name_btn_val = $_POST["trip_name_btn"];
 
+    if($country_btn_val == "Ascending" && $trip_name_btn_val == "Ascending"){
+        echo "Order By: Country (ASC), Trip Name (ASC) <br>";
+        $query = "SELECT * FROM bustrip ORDER BY country ASC, tripname ASC";
+        $_SESSION['bustrip_order']= $query; 
+
+    }
+    else if($country_btn_val == "Descending" && $trip_name_btn_val == "Ascending"){
+        echo "Order By: Country (DSC), Trip Name (ASC) <br>";
+        $query = "SELECT * FROM bustrip ORDER BY country DESC , tripname ASC";
+        $_SESSION['bustrip_order']= $query; 
+    }
+    else if($country_btn_val == "Descending" && $trip_name_btn_val == "Descending"){
+        echo "Order By: Country (DSC), Trip Name (DSC) <br>";
+        $query = "SELECT * FROM bustrip ORDER BY country DESC , tripname DESC";
+        $_SESSION['bustrip_order']= $query; 
+    }
+    else if($country_btn_val == "Ascending" && $trip_name_btn_val == "Descending"){
+        echo "Order By: Country (ASC), Trip Name (DSC) <br>";
+        $query = "SELECT * FROM bustrip ORDER BY country ASC , tripname DESC";
+        $_SESSION['bustrip_order']= $query; 
+    }
+   
+}
+if(isset($_POST['fetch_trips_by_country'])){
+    $country = $_POST['select_country'];
+    $query = "SELECT * FROM bustrip WHERE country='$country'";
+    $_SESSION['bustrip_order']= $query; 
+    
+}
 if(isset($_GET['delete'])){
     $id = $_GET['delete'];
     $response = $DB->query("DELETE FROM bustrip WHERE tripid='$id'");
@@ -36,42 +68,10 @@ if(isset($_GET['delete'])){
 
     }
 }
-if(isset($_POST['order-by'])){
-    $country_btn_val = $_POST["country_btn"];
-    $trip_name_btn_val = $_POST["trip_name_btn"];
+if(isset($_GET['update'])){
+    $id = $_GET['update'];
 
-    if($country_btn_val == "Ascending" && $trip_name_btn_val == "Ascending"){
-        echo "Order By: Country (ASC), Trip Name (ASC) <br>";
-        $query = "SELECT * FROM bustrip ORDER BY country ASC, tripname ASC";
-        $_SESSION['bustrip_order']= $query; 
-
-    }
-    else if($country_btn_val == "Descending" && $trip_name_btn_val == "Ascending"){
-        echo "Order By: Country (DSC), Trip Name (ASC) <br>";
-        $query = "SELECT * FROM bustrip ORDER BY country DESC , tripname ASC";
-        $_SESSION['bustrip_order']= $query; 
-    }
-    else if($country_btn_val == "Descending" && $trip_name_btn_val == "Descending"){
-        echo "Order By: Country (DSC), Trip Name (DSC) <br>";
-        $query = "SELECT * FROM bustrip ORDER BY country DESC , tripname DESC";
-        $_SESSION['bustrip_order']= $query; 
-    }
-    else if($country_btn_val == "Ascending" && $trip_name_btn_val == "Descending"){
-        echo "Order By: Country (ASC), Trip Name (DSC) <br>";
-        $query = "SELECT * FROM bustrip ORDER BY country ASC , tripname DESC";
-        $_SESSION['bustrip_order']= $query; 
-    }
-    header("location: main.php");
-
-   
 }
-if(isset($_POST['fetch_trips_by_country'])){
-    $country = $_POST['select_country'];
-    $query = "SELECT * FROM bustrip WHERE country='$country'";
-    $_SESSION['bustrip_order']= $query; 
-    header("location: main.php");
 
-    
-}
 
 ?>

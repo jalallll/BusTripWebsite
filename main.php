@@ -1,39 +1,7 @@
 <?php
 session_start();
 $_SESSION['bustrip_order']="SELECT * FROM bustrip";  
-if(isset($_POST['order-by'])){
-    $country_btn_val = $_POST["country_btn"];
-    $trip_name_btn_val = $_POST["trip_name_btn"];
 
-    if($country_btn_val == "Ascending" && $trip_name_btn_val == "Ascending"){
-        echo "Order By: Country (ASC), Trip Name (ASC) <br>";
-        $query = "SELECT * FROM bustrip ORDER BY country ASC, tripname ASC";
-        $_SESSION['bustrip_order']= $query; 
-
-    }
-    else if($country_btn_val == "Descending" && $trip_name_btn_val == "Ascending"){
-        echo "Order By: Country (DSC), Trip Name (ASC) <br>";
-        $query = "SELECT * FROM bustrip ORDER BY country DESC , tripname ASC";
-        $_SESSION['bustrip_order']= $query; 
-    }
-    else if($country_btn_val == "Descending" && $trip_name_btn_val == "Descending"){
-        echo "Order By: Country (DSC), Trip Name (DSC) <br>";
-        $query = "SELECT * FROM bustrip ORDER BY country DESC , tripname DESC";
-        $_SESSION['bustrip_order']= $query; 
-    }
-    else if($country_btn_val == "Ascending" && $trip_name_btn_val == "Descending"){
-        echo "Order By: Country (ASC), Trip Name (DSC) <br>";
-        $query = "SELECT * FROM bustrip ORDER BY country ASC , tripname DESC";
-        $_SESSION['bustrip_order']= $query; 
-    }
-   
-}
-if(isset($_POST['fetch_trips_by_country'])){
-    $country = $_POST['select_country'];
-    $query = "SELECT * FROM bustrip WHERE country='$country'";
-    $_SESSION['bustrip_order']= $query; 
-    
-}
 ?>
 
 <!DOCTYPE html>
@@ -49,8 +17,9 @@ if(isset($_POST['fetch_trips_by_country'])){
 		<?php
 		
 		include 'getdata.php';
+		include 'manage.php';
 		?>
-		<form method="POST" action="main.php">
+		<form method="POST" action="manage.php">
 			<h2>Order By Country:</h2>
 			<input type="radio" name="country_btn" value="Ascending" checked>Ascending
 			<input type="radio" name="country_btn" value="Descending">Descending
@@ -86,7 +55,7 @@ if(isset($_POST['fetch_trips_by_country'])){
 		</form>
 		<br> 
 		<br> 
-		<form method="POST" action="main.php">
+		<form method="POST" action="manage.php">
 			<label>Select All Bus Trips From Specific Country</label>
 			<br>
 			<input type="text" name="select_country">
