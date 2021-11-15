@@ -50,7 +50,7 @@ session_start();
 			<br>
 			<label>License Plate Number</label>
 			<input type="text" value="<?php echo $trip_license_plate; ?>" name="input_license_plate">
-			<input type="submit" value="<?php echo $btn_val; ?>" name="add_trip"> 
+			<input type="submit" value="<?php echo $btn_val; ?>" name="<?php echo $btn_val; ?>"> 
 		</form>
 		<br> 
 		<br> 
