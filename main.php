@@ -7,7 +7,6 @@
 		<title>CS3319 A3</title>
 	</head>
 	<body>
-		<?php include 'connectdb.php';?>
 		<h1>Assignment 3</h1>
 		<?php include 'getdata.php';?>
 		<form method="POST" action="order.php">
@@ -21,7 +20,7 @@
 			<input type="submit" value="Result" name="Result"> 
 		</form>
 
-		<form method="POST" action="addData.php">
+		<form method="POST" action="manage.php">
 			<label>Add New Bus Trip</label>
 			<label>Trip ID (Unique)_</label>
 			<input type="text" name="input_trip_id">
@@ -36,6 +35,12 @@
 			<label>License Plate Number</label>
 			<input type="text" name="input_license_plate">
 			<input type="submit" value="Add" name="add_trip"> 
+		</form>
+		<form method="POST" action="manage.php">
+			<label>Select All Bus Trips From Specific Country</label>
+			<input type="text" name="select_country">
+			<input type="submit" value="Fetch" name="fetch_trips_by_country"> 
+
 		</form>
 	</body>
 </html>

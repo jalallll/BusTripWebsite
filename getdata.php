@@ -1,7 +1,12 @@
 
 <?php
-$query = "SELECT * FROM bustrip";
-$result = mysqli_query($connection,$query);
+
+require "Database.php";
+
+$DB = Database::connect();
+
+
+$result = $DB->query("SELECT * FROM bustrip");
 if (!$result) {
     die("databases query failed.");
 }
