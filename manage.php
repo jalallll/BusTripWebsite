@@ -76,12 +76,6 @@ if(isset($_GET['delete'])){
     $id = $_POST['input_trip_id'];
     if(isset($_POST['Add Trip'])){
         $query = "INSERT INTO bustrip (tripid, tripname, startdate, enddate, country, licenseplatenumber) VALUES ('$id','$name', '$start', '$end', '$country', '$license_plate')";
-    }
-    else{
-        $query = "UPDATE bustrip SET tripname='$name', startdate='$start', enddate='$end', country='$country', licenseplatenumber='$license_plate' WHERE tripid='$id'";
-    }     
-     
-    
     $add_data_res = $DB->query($query);
 
     if (!$add_data_res) {
@@ -93,6 +87,24 @@ if(isset($_GET['delete'])){
         header("location: main.php");
 
     }
+    }
+    else{
+        $query = "UPDATE bustrip SET tripname='$name', startdate='$start', enddate='$end', country='$country', licenseplatenumber='$license_plate' WHERE tripid='$id'";
+    $add_data_res = $DB->query($query);
+
+    if (!$add_data_res) {
+        die("Failed Insert");
+    } else{
+        echo "Successful Insert";
+        $_SESSION['message'] = "Successful Insert";
+        $_SESSION['msg_type'] = "Success";
+        header("location: main.php");
+
+    }
+    }     
+     
+    
+    
 }
 if(isset($_GET['update'])){
     $id = $_GET['update'];
