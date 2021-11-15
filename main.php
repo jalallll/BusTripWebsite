@@ -49,7 +49,7 @@ if(isset($_POST['fetch_trips_by_country'])){
 		$_SESSION['bustrip_order']="SELECT * FROM bustrip"; 
 		include 'getdata.php';
 		?>
-		<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+		<form method="POST" action="main.php">
 			<h2>Order By Country:</h2>
 			<input type="radio" name="country_btn" value="Ascending" checked>Ascending
 			<input type="radio" name="country_btn" value="Descending">Descending
