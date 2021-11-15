@@ -19,28 +19,37 @@
 			<input type="radio" name="trip_name_btn" value="Descending">Descending
 			<input type="submit" value="Result" name="order-by"> 
 		</form>
-
+		<br> 
+		<br> 
 		<form method="POST" action="manage.php">
 			<label>Add New Bus Trip</label>
-			<label>Trip ID (Unique)_</label>
+			<br> 
+			<label>Trip ID (Unique)</label>
 			<input type="text" name="input_trip_id">
+			<br>
 			<label>Trip Name</label>
 			<input type="text" name="input_trip_name">
+			<br>
 			<label>Start Date</label>
 			<input type="text" name="input_start_date">
+			<br>
 			<label>End Date</label>
 			<input type="text" name="input_end_date">
+			<br>
 			<label>Country</label>
 			<input type="text" name="input_country">
+			<br>
 			<label>License Plate Number</label>
 			<input type="text" name="input_license_plate">
 			<input type="submit" value="Add" name="add_trip"> 
 		</form>
+		<br> 
+		<br> 
 		<form method="POST" action="manage.php">
 			<label>Select All Bus Trips From Specific Country</label>
+			<br>
 			<input type="text" name="select_country">
 			<input type="submit" value="Fetch" name="fetch_trips_by_country"> 
-
 		</form>
 	</body>
 </html>
