@@ -64,7 +64,7 @@ session_start();
 			$conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
 			$res = mysqli_query($conn,"SELECT tripid FROM bustrip");
 			while ($row = mysqli_fetch_assoc($res)): 
-				$name = $row['firstname'];
+				$name = $row['tripid'];
 				echo $name;
 		?>
 						<h1><?php $name; ?></h1>
@@ -87,7 +87,7 @@ session_start();
 					$conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
 					$res = mysqli_query($conn,"SELECT tripid FROM bustrip");
 					while ($row = mysqli_fetch_assoc($res)): 
-						$name = $row['firstname'];?>
+						$name = $row['tripid'];?>
 						<option value="<?php $name; ?>"><?php $name; ?></option>
             		<?php endwhile; ?>
 				
