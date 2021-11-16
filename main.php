@@ -65,7 +65,9 @@ session_start();
 					$DB = Database::Connect();
 					$res = $DB->query("SELECT tripid FROM bustrip");
 					while ($row = mysqli_fetch_assoc($res)): 
-						$name = $row['firstname'];?>
+						$name = $row['firstname'];
+						echo $name;
+						?>
 						<h1><?php $name; ?></h1>
             		<?php endwhile; ?>
 		<br> 
