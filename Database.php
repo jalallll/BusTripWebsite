@@ -37,6 +37,11 @@
             }
             return $result;
         }
+        public function get_all_passenger_firstname(){
+            $query = "SELECT firstname FROM passenger";
+            return $this->query($query);
+
+        }
     }
 
 ?>

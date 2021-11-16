@@ -3,7 +3,7 @@
 
 require_once "Database.php";
 
-$DB = Database::connect();
+$DB = Database::Connect();
 
 $query = $_SESSION['bustrip_order'];
 echo $query;

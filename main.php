@@ -17,6 +17,7 @@ session_start();
 		
 		include_once 'getdata.php';
 		require_once 'manage.php';
+		require_once 'Database.php';
 		?>
 		<form method="POST" action="manage.php">
 			<h2>Order By Country:</h2>
@@ -68,12 +69,21 @@ session_start();
 			<input type="submit" value="Fetch" name="fetch_trips_by_country"> 
 		</form>
 		<br>
+		<br>
 		<form method="POST" action="manage.php">
 			<label>Create Booking</label>
 			<br>
 			<label>Pick A Passenger</label>
 			<select name="passenger_pick" id="passenger_pick">
-				<option value="volvo">Volvo</option>
+				<?php 
+					$DB = Database::Connect();
+					$res = $DB->get_all_passenger_firstname();
+					while ($row = mysqli_fetch_assoc($result)){
+						$name = $row['firstname'];
+						echo "<option value=$name>$name</option>";
+            		}
+				?>
+				
 				<option value="saab">Saab</option>
 			</select>
 			<br>
