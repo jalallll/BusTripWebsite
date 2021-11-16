@@ -3,13 +3,13 @@
 session_start();
 
 
-$trip_id = "";
+$trip_id = 0;
 $trip_name = "";
 $trip_start = "";
 $trip_end = "";
 $trip_country = "";
 $trip_license_plate = "";
-$btn_val = "Add Trip";
+$btn_val = "Add";
 
 require_once "Database.php";
 
@@ -67,15 +67,15 @@ if(isset($_GET['delete'])){
     header("location: main.php");
 
 }
- if(isset($_POST['Add Trip']) || isset($_POST['Update Trip'])){
+ if(isset($_POST['add_trip'])){
     $name = $_POST['input_trip_name'];
     $start = $_POST['input_start_date'];
     $end = $_POST['input_end_date'];
     $country = $_POST['input_country'];
     $license_plate = $_POST['input_license_plate'];
     $id = $_POST['input_trip_id'];
-    if(isset($_POST['Add Trip'])){
-        $query = "INSERT INTO bustrip (tripid, tripname, startdate, enddate, country, licenseplatenumber) VALUES ('$id','$name', '$start', '$end', '$country', '$license_plate')";
+
+    $query = "INSERT INTO bustrip (tripid, tripname, startdate, enddate, country, licenseplatenumber) VALUES ('$id','$name', '$start', '$end', '$country', '$license_plate')";
     $add_data_res = $DB->query($query);
 
     if (!$add_data_res) {
@@ -84,12 +84,21 @@ if(isset($_GET['delete'])){
         echo "Successful Insert";
         $_SESSION['message'] = "Successful Insert";
         $_SESSION['msg_type'] = "Success";
+                echo "successful insert";
+
         header("location: main.php");
 
-    }
-    }
-    else{
-        $query = "UPDATE bustrip SET tripname='$name', startdate='$start', enddate='$end', country='$country', licenseplatenumber='$license_plate' WHERE tripid='$id'";
+    }  
+}
+if(isset($_POST['update_trip'])){
+    $name = $_POST['input_trip_name'];
+    $start = $_POST['input_start_date'];
+    $end = $_POST['input_end_date'];
+    $country = $_POST['input_country'];
+    $license_plate = $_POST['input_license_plate'];
+    $id = $_POST['input_trip_id'];
+
+    $query = "UPDATE bustrip SET tripname='$name', startdate='$start', enddate='$end', country='$country', licenseplatenumber='$license_plate' WHERE tripid='$id'";
     $add_data_res = $DB->query($query);
 
     if (!$add_data_res) {
@@ -98,13 +107,10 @@ if(isset($_GET['delete'])){
         echo "Successful Insert";
         $_SESSION['message'] = "Successful Insert";
         $_SESSION['msg_type'] = "Success";
+        echo "successful update";
         header("location: main.php");
 
     }
-    }     
-     
-    
-    
 }
 if(isset($_GET['update'])){
     $id = $_GET['update'];
@@ -117,7 +123,7 @@ if(isset($_GET['update'])){
         $trip_end = $row['enddate'];
         $trip_country = $row['country'];
         $trip_license_plate = $row['licenseplatenumber'];
-        $btn_val = "Update Trip";
+        $btn_val = "Update";
     }
 }
 
