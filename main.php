@@ -61,6 +61,13 @@ session_start();
  
 		</form>
 		<br> 
+		<?php 
+					$DB = Database::Connect();
+					$res = $DB->get_all_passenger_firstname();
+					while ($row = mysqli_fetch_assoc($result)): 
+						$name = $row['firstname'];?>
+						<h1><?php $name; ?></h1>
+            		<?php endwhile; ?>
 		<br> 
 		<form method="POST" action="manage.php">
 			<label>Select All Bus Trips From Specific Country</label>
