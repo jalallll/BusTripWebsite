@@ -62,9 +62,9 @@ session_start();
 		<br> 
 		<?php 
 			$conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
-			$res = mysqli_query($conn,"SELECT tripid FROM bustrip");
+			$res = mysqli_query($conn,"SELECT firstname FROM passenger");
 			while ($row = mysqli_fetch_assoc($res)): 
-				$name = $row['tripid'];
+				$name = $row['firstname'];
 				echo $name;
 		?>
 						<h1><?php $name; ?></h1>
