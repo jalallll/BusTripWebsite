@@ -78,11 +78,11 @@ session_start();
 				<?php 
 					$DB = Database::Connect();
 					$res = $DB->get_all_passenger_firstname();
-					while ($row = mysqli_fetch_assoc($result)){
-						$name = $row['firstname'];
-						echo "<option value=$name>$name</option>";
-            		}
-				?>
+					while ($row = mysqli_fetch_assoc($result)): 
+						$name = $row['firstname'];?>
+						<option value="<?php $name; ?>"><?php $name; ?></option>
+            		<?php endwhile; ?>
+				
 				
 				<option value="saab">Saab</option>
 			</select>
