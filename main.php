@@ -63,7 +63,7 @@ session_start();
 		<br> 
 		<?php 
 					$DB = Database::Connect();
-					$res = $DB->query("SELECT firstname FROM passenger");
+					$res = $DB->query("SELECT tripid FROM bustrip");
 					while ($row = mysqli_fetch_assoc($res)): 
 						$name = $row['firstname'];?>
 						<h1><?php $name; ?></h1>
@@ -84,7 +84,7 @@ session_start();
 			<select name="passenger_pick" id="passenger_pick">
 				<?php 
 					$DB = Database::Connect();
-					$res = $DB->query("SELECT firstname FROM passenger");
+					$res = $DB->query("SELECT tripid FROM bustrip");
 					while ($row = mysqli_fetch_assoc($res)): 
 						$name = $row['firstname'];?>
 						<option value="<?php $name; ?>"><?php $name; ?></option>
