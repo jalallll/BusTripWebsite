@@ -17,7 +17,6 @@ session_start();
 		
 		include_once 'getdata.php';
 		require_once 'manage.php';
-		require_once 'Database.php';
 		?>
 		<form method="POST" action="manage.php">
 			<h2>Order By Country:</h2>
@@ -62,12 +61,12 @@ session_start();
 		</form>
 		<br> 
 		<?php 
-					$DB = Database::Connect();
-					$res = $DB->query("SELECT tripid FROM bustrip");
-					while ($row = mysqli_fetch_assoc($res)): 
-						$name = $row['firstname'];
-						echo $name;
-						?>
+			$conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
+			$res = mysqli_query($conn,"SELECT tripid FROM bustrip");
+			while ($row = mysqli_fetch_assoc($res)): 
+				$name = $row['firstname'];
+				echo $name;
+		?>
 						<h1><?php $name; ?></h1>
             		<?php endwhile; ?>
 		<br> 
@@ -85,8 +84,8 @@ session_start();
 			<label>Pick A Passenger</label>
 			<select name="passenger_pick" id="passenger_pick">
 				<?php 
-					$DB = Database::Connect();
-					$res = $DB->query("SELECT tripid FROM bustrip");
+					$conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
+					$res = mysqli_query($conn,"SELECT tripid FROM bustrip");
 					while ($row = mysqli_fetch_assoc($res)): 
 						$name = $row['firstname'];?>
 						<option value="<?php $name; ?>"><?php $name; ?></option>
