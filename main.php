@@ -67,8 +67,21 @@ session_start();
 			<input type="text" name="select_country">
 			<input type="submit" value="Fetch" name="fetch_trips_by_country"> 
 		</form>
+		<br>
 		<form method="POST" action="manage.php">
-			
+			<label>Create Booking</label>
+			<br>
+			<label>Pick A Passenger</label>
+			<select name="passenger_pick" id="passenger_pick">
+				<option value="volvo">Volvo</option>
+				<option value="saab">Saab</option>
+			</select>
+			<br>
+			<label>Pick A Trip</label>
+			<select name="trip_pick" id="trip_pick">
+				<option value="volvo">trip1</option>
+				<option value="saab">trip2</option>
+			</select>
 			<input type="submit" value="Create Booking" name="add_booking">
 		</form>
 	</body>
