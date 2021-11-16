@@ -94,6 +94,7 @@ session_start();
             		<?php endwhile; 
 				?>
 			</select>
+			<input type="text" name="booking_price" placeholder="Price">
 			<input type="submit" value="Create Booking" name="add_booking">
 		</form>
 	</body>
