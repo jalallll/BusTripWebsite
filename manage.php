@@ -126,6 +126,31 @@ if(isset($_GET['update'])){
         $btn_val = "Update";
     }
 }
+if(isset($_POST['add_booking'])){
+    $price = $_POST['booking_price'];
+    $firstname = $_POST['passenger_pick_first'];
+    $lastname = $_POST['passenger_pick_last'];
+
+    $trip = $_POST['trip_pick'];
+    $query = "INSERT INTO booking (passengerid, tripid, price) VALUES (
+        (SELECT passengerid FROM passenger WHERE firstname='$firstname' AND lastname='$lastname'),
+        (SELECT tripid FROM bustrip WHERE tripname='$trip'),
+        '$price'
+    )";
+    $add_data_res = $DB->query($query);
+
+    if (!$add_data_res) {
+        die("Failed Insert");
+    } else{
+        echo "Successful Insert";
+        $_SESSION['message'] = "Successful Insert";
+        $_SESSION['msg_type'] = "Success";
+                echo "successful insert";
+
+        header("location: main.php");
+
+    }  
+}
 
 
 ?>

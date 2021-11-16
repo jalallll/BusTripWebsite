@@ -73,13 +73,24 @@ session_start();
 		<form method="POST" action="manage.php">
 			<label>Create Booking</label>
 			<br>
-			<label>Pick A Passenger</label>
-			<select name="passenger_pick" id="passenger_pick">
+			<label>Pick First Name</label>
+			<select name="passenger_pick_first" id="passenger_pick">
 				<?php 
 					$conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
 					$res = mysqli_query($conn,"SELECT firstname FROM passenger");
 					while ($row = mysqli_fetch_assoc($res)): 
 						echo "<option>" . $row['firstname'] . "</option>";?>
+            		<?php endwhile; 
+				?>				
+			</select>
+			<br>
+			<label>Pick Last Name</label>
+			<select name="passenger_pick_last" id="passenger_pick">
+				<?php 
+					$conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
+					$res = mysqli_query($conn,"SELECT lastname FROM passenger");
+					while ($row = mysqli_fetch_assoc($res)): 
+						echo "<option>" . $row['lastname'] . "</option>";?>
             		<?php endwhile; 
 				?>				
 			</select>
