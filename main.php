@@ -60,15 +60,7 @@ session_start();
  
 		</form>
 		<br> 
-		<?php 
-			$conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
-			$res = mysqli_query($conn,"SELECT firstname FROM passenger");
-			while ($row = mysqli_fetch_assoc($res)): 
-				$name = $row['firstname'];
-				echo $name;
-		?>
-						<h1><?php $name; ?></h1>
-            		<?php endwhile; ?>
+		
 		<br> 
 		<form method="POST" action="manage.php">
 			<label>Select All Bus Trips From Specific Country</label>
@@ -85,10 +77,9 @@ session_start();
 			<select name="passenger_pick" id="passenger_pick">
 				<?php 
 					$conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
-					$res = mysqli_query($conn,"SELECT tripid FROM bustrip");
+					$res = mysqli_query($conn,"SELECT firstname FROM passenger");
 					while ($row = mysqli_fetch_assoc($res)): 
-						$name = $row['tripid'];?>
-						<option value="<?php $name; ?>"><?php $name; ?></option>
+						echo "<option>" . $row['firstname'] . "</option>";?>
             		<?php endwhile; ?>
 				
 				
