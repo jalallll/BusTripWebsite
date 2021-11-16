@@ -3,7 +3,7 @@
 session_start();
 
 
-$trip_id = 0;
+$trip_id = "";
 $trip_name = "";
 $trip_start = "";
 $trip_end = "";
