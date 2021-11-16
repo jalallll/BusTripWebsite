@@ -80,16 +80,19 @@ session_start();
 					$res = mysqli_query($conn,"SELECT firstname FROM passenger");
 					while ($row = mysqli_fetch_assoc($res)): 
 						echo "<option>" . $row['firstname'] . "</option>";?>
-            		<?php endwhile; ?>
-				
-				
-				<option value="saab">Saab</option>
+            		<?php endwhile; 
+				?>				
 			</select>
 			<br>
 			<label>Pick A Trip</label>
 			<select name="trip_pick" id="trip_pick">
-				<option value="volvo">trip1</option>
-				<option value="saab">trip2</option>
+				<?php 
+					$conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
+					$res = mysqli_query($conn,"SELECT tripname FROM bustrip");
+					while ($row = mysqli_fetch_assoc($res)): 
+						echo "<option>" . $row['tripname'] . "</option>";?>
+            		<?php endwhile; 
+				?>
 			</select>
 			<input type="submit" value="Create Booking" name="add_booking">
 		</form>
