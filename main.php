@@ -56,7 +56,7 @@ session_start();
 			
 			<?php else: ?>
 			<input type="submit" value="<?php echo $btn_val; ?>" name="add_trip">
-
+			<?php endif; ?>
  
 		</form>
 		<br> 
