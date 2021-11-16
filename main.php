@@ -17,6 +17,7 @@ session_start();
 		
 		include_once 'getdata.php';
 		require_once 'manage.php';
+
 		?>
 		<form method="POST" action="manage.php">
 			<h2>Order By Country:</h2>
@@ -108,5 +109,9 @@ session_start();
 			<input type="text" name="booking_price" placeholder="Price">
 			<input type="submit" value="Create Booking" name="add_booking">
 		</form>
+		<br>
+		<br>
+		<?php include_once 'passenger_info.php'; ?>
+
 	</body>
 </html>

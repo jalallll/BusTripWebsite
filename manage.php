@@ -67,6 +67,19 @@ if(isset($_GET['delete'])){
     header("location: main.php");
 
 }
+if(isset($_GET['view_bookings'])){
+    $id = $_GET['view_bookings'];
+    $response = $DB->query(
+        "SELECT passenger.firstname, passenger.lastname, booking.price, bustrip.tripname 
+        FROM passenger 
+        INNER JOIN booking ON passenger.passengerid = booking.passengerid
+        INNER JOIN bustrip ON booking.tripid = bustrip.tripid
+        WHERE passenger.passengerid='$id'");
+    
+
+    
+
+}
  if(isset($_POST['add_trip'])){
     $name = $_POST['input_trip_name'];
     $start = $_POST['input_start_date'];
