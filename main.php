@@ -15,7 +15,6 @@ session_start();
 	</head>
 	<body>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-		<?php require_once 'manage.php';?>
 		<h1>Assignment 3</h1>
 		<br>
 		<?php include_once 'order_trips.php';?>
@@ -30,42 +29,7 @@ session_start();
 		<br> 
 		<br>
 		<h1>Create New Booking</h1>
-		<form method="POST" action="manage.php">
-			<label>Pick First Name</label>
-			<select name="passenger_pick_first" id="passenger_pick">
-				<?php 
-					$conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
-					$res = mysqli_query($conn,"SELECT firstname FROM passenger");
-					while ($row = mysqli_fetch_assoc($res)): 
-						echo "<option>" . $row['firstname'] . "</option>";?>
-            		<?php endwhile; 
-				?>				
-			</select>
-			<br>
-			<label>Pick Last Name</label>
-			<select name="passenger_pick_last" id="passenger_pick">
-				<?php 
-					$conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
-					$res = mysqli_query($conn,"SELECT lastname FROM passenger");
-					while ($row = mysqli_fetch_assoc($res)): 
-						echo "<option>" . $row['lastname'] . "</option>";?>
-            		<?php endwhile; 
-				?>				
-			</select>
-			<br>
-			<label>Pick A Trip</label>
-			<select name="trip_pick" id="trip_pick">
-				<?php 
-					$conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
-					$res = mysqli_query($conn,"SELECT tripname FROM bustrip");
-					while ($row = mysqli_fetch_assoc($res)): 
-						echo "<option>" . $row['tripname'] . "</option>";?>
-            		<?php endwhile; 
-				?>
-			</select>
-			<input type="text" name="booking_price" placeholder="Price">
-			<input type="submit" value="Create Booking" name="add_booking">
-		</form>
+		<?php include_once 'add_booking.php';?>
 		<br>
 		<br>
 		<br>
