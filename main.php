@@ -118,5 +118,9 @@ session_start();
 		<br>
 		<h1>Bookings</h1>
 		<?php include_once 'get_bookings.php'; ?>
+		<br>
+		<br>
+		<h1>Bus Trips With No Bookings</h1>
+		<?php include_once 'empty_trips.php'; ?>
 	</body>
 </html>
