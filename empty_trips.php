@@ -8,7 +8,7 @@ $DB = Database::Connect();
 $query = "SELECT DISTINCT 
             bustrip.tripid, bustrip.tripname, 
             bustrip.startdate, bustrip.enddate, 
-            bustrip.country, bustrip.licenseplatenumber
+            bustrip.country, bustrip.licenseplatenumber, bustrip.urlimage
         FROM bustrip
         WHERE bustrip.tripid NOT IN (SELECT tripid FROM booking)";
 
