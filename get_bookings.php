@@ -5,7 +5,6 @@ $DB = Database::Connect();
 
 $query = $_SESSION['booking_query'];
 
-echo $query;
 
 
 $result = $DB->query($query);

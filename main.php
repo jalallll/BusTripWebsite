@@ -13,6 +13,10 @@ session_start();
 	</head>
 	<body>
 		<h1>Assignment 3</h1>
+		<br>
+		<br>
+		<h1>Trips Table</h1>
+		<br>
 		<?php
 		
 		include_once 'getdata.php';
@@ -30,9 +34,9 @@ session_start();
 			<input type="submit" value="Result" name="order-by"> 
 		</form>
 		<br> 
-		<br> 
+		<br>
+		<h2>Add New Bus Trip[</h2> 
 		<form method="POST" action="manage.php">
-			<label>Bus Trip</label>
 			<br> 
 			<label>Trip ID (Unique)</label>
 			<input type="text" value="<?php echo $trip_id; ?>" name="input_trip_id">
@@ -61,7 +65,8 @@ session_start();
  
 		</form>
 		<br> 
-		
+		<br>
+		<h2>Order Bus Trips By Country</h2>
 		<br> 
 		<form method="POST" action="manage.php">
 			<label>Select All Bus Trips From Specific Country</label>
@@ -71,8 +76,8 @@ session_start();
 		</form>
 		<br>
 		<br>
+		<h1>Create New Booking</h1>
 		<form method="POST" action="manage.php">
-			<label>Create Booking</label>
 			<br>
 			<label>Pick First Name</label>
 			<select name="passenger_pick_first" id="passenger_pick">
@@ -109,6 +114,7 @@ session_start();
 			<input type="text" name="booking_price" placeholder="Price">
 			<input type="submit" value="Create Booking" name="add_booking">
 		</form>
+		<br>
 		<br>
 		<br>
 		<h1>Passenger Information</h1>
