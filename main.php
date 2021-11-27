@@ -18,16 +18,8 @@ session_start();
 		<?php require_once 'manage.php';?>
 		<h1>Assignment 3</h1>
 		<br>
-		<form method="POST" action="manage.php">
-			<h2>Order By Country:</h2>
-			<input type="radio" name="country_btn" value="Ascending" checked>Ascending
-			<input type="radio" name="country_btn" value="Descending">Descending
-			<br> 
-			<h2>Order By Trip Name:</h2>
-			<input type="radio" name="trip_name_btn" value="Ascending" checked>Ascending
-			<input type="radio" name="trip_name_btn" value="Descending">Descending
-			<input type="submit" value="Result" name="order-by"> 
-		</form>
+		<?php include_once 'order_trips.php';?>
+
 		<br> 
 		<h1>Trips Table</h1>
 		<?php include_once 'getdata.php';?>
