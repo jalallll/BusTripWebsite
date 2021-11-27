@@ -10,7 +10,6 @@
 
         private function __construct()
         {
-            echo "Database connected";
              $this->connection = mysqli_connect($this->dbhost, $this->dbuser,$this->dbpass,$this->dbname);
              if (mysqli_connect_errno()) {
                 die("database connection failed :" .
