@@ -12,7 +12,7 @@ if (!$result) {
     die("databases query failed.");
 }
 ?>
-<table> 
+<table class="table table-bordered"> 
     <tr> 
         <th>Passenger ID</th> 
         <th>First Name</th> 

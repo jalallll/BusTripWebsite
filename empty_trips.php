@@ -17,7 +17,7 @@ if (!$result) {
     die("databases query failed.");
 }
 ?>
-<table> 
+<table class="table table-bordered"> 
     <tr> 
         <th>Tripid</th> 
         <th>Trip Name</th> 
