@@ -29,15 +29,6 @@ session_start();
 		<?php include_once 'add_trip.php';?>
 		<br> 
 		<br>
-		<h2>Order Bus Trips By Country</h2>
-		<form method="POST" action="manage.php">
-			<label>Select All Bus Trips From Specific Country</label>
-			<br>
-			<input type="text" name="select_country">
-			<input type="submit" value="Fetch" name="fetch_trips_by_country"> 
-		</form>
-		<br>
-		<br>
 		<h1>Create New Booking</h1>
 		<form method="POST" action="manage.php">
 			<label>Pick First Name</label>
