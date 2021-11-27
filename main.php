@@ -111,6 +111,8 @@ session_start();
 		</form>
 		<br>
 		<br>
+		<h1>Passenger Information</h1>
+		<br>
 		<?php include_once 'passenger_info.php'; ?>
 
 	</body>
