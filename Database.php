@@ -31,9 +31,7 @@
         public function query($query)
         {
             $result = mysqli_query($this->connection,$query);
-            if (!$result) {
-                die("Databases query failed. Can't alter row because another table corresponds to this row.");
-            }
+
             return $result;
         }
         public function get_all_passenger_firstname(){

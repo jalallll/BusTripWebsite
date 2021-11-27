@@ -88,6 +88,9 @@ if(isset($_GET['delete_booking'])){
     ";
     
     $response = $DB->query($query);
+                if (!$response) {
+                die("Databases query failed. Can't alter row because another table corresponds to this row.");
+            }
 }
  if(isset($_POST['add_trip'])){
     $name = $_POST['input_trip_name'];
