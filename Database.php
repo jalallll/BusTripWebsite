@@ -32,7 +32,7 @@
         {
             $result = mysqli_query($this->connection,$query);
             if (!$result) {
-                die("databases query failed.");
+                die("Databases query failed. Can't alter row because another table corresponds to this row.");
             }
             return $result;
         }
