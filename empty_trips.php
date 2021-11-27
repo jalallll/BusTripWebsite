@@ -10,7 +10,7 @@ $query = "SELECT DISTINCT
             bustrip.startdate, bustrip.enddate, 
             bustrip.country, bustrip.licenseplate
         FROM bustrip
-        WHERE bustrip.tripid NOT IN (SELECT tripid FROM booking);";
+        WHERE bustrip.tripid NOT IN (SELECT tripid FROM booking)";
 
 $result = $DB->query($query);
 if (!$result) {
