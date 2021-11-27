@@ -69,18 +69,23 @@ if(isset($_GET['delete'])){
 }
 if(isset($_GET['view_bookings'])){
     $id = $_GET['view_bookings'];
-    $query = "SELECT passenger.firstname, passenger.lastname, booking.price, bustrip.tripname 
+    $query = "SELECT passenger.passengerid, passenger.firstname, passenger.lastname, bustrip.tripid, booking.price, bustrip.tripname 
         FROM passenger 
         INNER JOIN booking ON passenger.passengerid = booking.passengerid
         INNER JOIN bustrip ON booking.tripid = bustrip.tripid
         WHERE passenger.passengerid='$id'";
     
     $_SESSION['booking_query'] = $query;
+}
+if(isset($_GET['delete_booking'])){
+    $id = $_GET['delete_booking'];
+    $query = "SELECT passenger.passengerid, passenger.firstname, passenger.lastname, bustrip.tripid, booking.price, bustrip.tripname 
+        FROM passenger 
+        INNER JOIN booking ON passenger.passengerid = booking.passengerid
+        INNER JOIN bustrip ON booking.tripid = bustrip.tripid
+        WHERE passenger.passengerid='$id'";
     
-    
-
-    
-
+    $_SESSION['booking_query'] = $query;
 }
  if(isset($_POST['add_trip'])){
     $name = $_POST['input_trip_name'];

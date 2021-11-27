@@ -15,15 +15,20 @@ if (!$result) {
 ?>
 <table> 
     <tr> 
+        <th>Passenger ID</th> 
         <th>First Name</th> 
         <th>Last Name</th> 
         <th>Booking Price</th>
-        <th>Trip Name</th> 
+        <th>Trip Name</th>
+        <th>Trip ID</th> 
     </tr>
 
 <?php 
 while ($row = mysqli_fetch_assoc($result)): ?>
     <tr>
+        <td>
+            <?php echo $row['passengerid']; ?>
+        </td>
         <td>
             <?php echo $row['firstname']; ?>
         </td>
@@ -37,10 +42,12 @@ while ($row = mysqli_fetch_assoc($result)): ?>
             <?php echo $row['tripname']; ?>
         </td>
         <td>
-            <a href="main.php?view_bookings=<?php echo $row['passengerid']; ?>">View Bookings</a>
+            <?php echo $row['tripid']; ?>
+        </td>
+        <td>
+            <a href="main.php?delete_booking=<?php echo $row['passengerid']; ?>-<?php echo $row['tripid'] ?>">Delete Booking</a>
         </td>
 
-        </td>
     </tr>
 
 
