@@ -114,6 +114,10 @@ session_start();
 		<h1>Passenger Information</h1>
 		<br>
 		<?php include_once 'passenger_info.php'; ?>
-
+		<br>
+		<br>
+		<h1>Bookings</h1>
+		<br>
+		<?php include_once 'get_bookings.php'; ?>
 	</body>
 </html>
