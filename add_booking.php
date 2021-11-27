@@ -11,18 +11,17 @@
             <?php endwhile; 
         ?>				
     </select>
+    <input type="submit" value="Select First Name" name="select_first">
+
     <br>
     <label>Pick Last Name</label>
     <select name="passenger_pick_last" id="passenger_pick">
         <?php 
-            $firstname = $_POST['passenger_pick_first'];
-            if($firstname!=""){
-                $conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
-                $res = mysqli_query($conn,"SELECT lastname FROM passenger WHERE firstname='$firstname'");
-                while ($row = mysqli_fetch_assoc($res)): 
-                    echo "<option>" . $row['lastname'] . "</option>";?>
-                <?php endwhile; 
-            }
+            $conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
+            $res = mysqli_query($conn,"SELECT lastname FROM passenger");
+            while ($row = mysqli_fetch_assoc($res)): 
+                echo "<option>" . $row['lastname'] . "</option>";?>
+            <?php endwhile; 
 
         ?>				
     </select>
