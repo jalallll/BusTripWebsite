@@ -5,7 +5,7 @@
     <select name="passenger_pick_first" id="passenger_pick">
         <?php 
             $conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
-            $res = mysqli_query($conn,"SELECT firstname FROM passenger");
+            $res = mysqli_query($conn,"SELECT DISTINCT firstname FROM passenger");
             while ($row = mysqli_fetch_assoc($res)): 
                 echo "<option>" . $row['firstname'] . "</option>";?>
             <?php endwhile; 
@@ -18,7 +18,7 @@
     <select name="passenger_pick_last" id="passenger_pick">
         <?php 
             $conn = mysqli_connect("localhost", "root","cs3319","04_assign2db");
-            $res = mysqli_query($conn,"SELECT lastname FROM passenger");
+            $res = mysqli_query($conn,"SELECT DISTINCT lastname FROM passenger");
             while ($row = mysqli_fetch_assoc($res)): 
                 echo "<option>" . $row['lastname'] . "</option>";?>
             <?php endwhile; 
