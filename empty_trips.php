@@ -50,7 +50,9 @@ while ($row = mysqli_fetch_assoc($result)): ?>
             <?php echo $row['licenseplatenumber']; ?>
         </td>
         <td>
-            <img src="<?php echo $row['urlimage']; ?>"></img>
+            <div class="card" style="width: 18rem;">
+                <img src="<?php echo $row['urlimage']; ?>" alt="...">
+            </div>        
         </td>
     </tr>
 
