@@ -103,7 +103,9 @@ if(isset($_GET['delete_booking'])){
     }
 
 
-    $query = "INSERT INTO bustrip (tripid, tripname, startdate, enddate, country, licenseplatenumber) VALUES ('$id','$name', '$start', '$end', '$country', '$license_plate', '$url_image')";
+    $query = "INSERT INTO 
+    bustrip (tripid, tripname, startdate, enddate, country, licenseplatenumber, urlimage) 
+    VALUES ('$id','$name', '$start', '$end', '$country', '$license_plate', '$url_image')";
     $add_data_res = $DB->query($query);
 
     if (!$add_data_res) {

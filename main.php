@@ -18,15 +18,13 @@ session_start();
 		<h1>Assignment 3</h1>
 		<br>
 		<?php include_once 'order_trips.php';?>
-
+		<br> 		
+		<h2>Add/Update Trip</h2> 
+		<?php include_once 'add_trip.php';?>
 		<br> 
 		<h1>Trips Table</h1>
 		<?php include_once 'getdata.php';?>
 		<br>
-		<br>
-		<h2>Add New Bus Trip</h2> 
-		<?php include_once 'add_trip.php';?>
-		<br> 
 		<br>
 		<h1>Create New Booking</h1>
 		<?php include_once 'add_booking.php';?>
@@ -37,7 +35,7 @@ session_start();
 		<?php include_once 'passenger_info.php'; ?>
 		<br>
 		<br>
-		<h1>Bookings</h1>
+		<h1>Bookings For Selected Passenger</h1>
 		<?php include_once 'get_bookings.php'; ?>
 		<br>
 		<br>
