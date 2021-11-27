@@ -96,8 +96,14 @@ if(isset($_GET['delete_booking'])){
     $country = $_POST['input_country'];
     $license_plate = $_POST['input_license_plate'];
     $id = $_POST['input_trip_id'];
+    $url_image = $_POST['input_url_image'];
+    $url_image = str_replace(" ", "", $url_image);
+    if($url_image==""){
+        $url_image="NULL";
+    }
 
-    $query = "INSERT INTO bustrip (tripid, tripname, startdate, enddate, country, licenseplatenumber) VALUES ('$id','$name', '$start', '$end', '$country', '$license_plate')";
+
+    $query = "INSERT INTO bustrip (tripid, tripname, startdate, enddate, country, licenseplatenumber) VALUES ('$id','$name', '$start', '$end', '$country', '$license_plate', '$url_image')";
     $add_data_res = $DB->query($query);
 
     if (!$add_data_res) {
@@ -119,8 +125,10 @@ if(isset($_POST['update_trip'])){
     $country = $_POST['input_country'];
     $license_plate = $_POST['input_license_plate'];
     $id = $_POST['input_trip_id'];
+    $url_image = $_POST['input_url_image'];
 
-    $query = "UPDATE bustrip SET tripname='$name', startdate='$start', enddate='$end', country='$country', licenseplatenumber='$license_plate' WHERE tripid='$id'";
+
+    $query = "UPDATE bustrip SET tripname='$name', startdate='$start', enddate='$end', country='$country', licenseplatenumber='$license_plate', urlimage='$url_image' WHERE tripid='$id'";
     $add_data_res = $DB->query($query);
 
     if (!$add_data_res) {

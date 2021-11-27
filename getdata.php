@@ -45,13 +45,15 @@ while ($row = mysqli_fetch_assoc($result)): ?>
             <?php echo $row['licenseplatenumber']; ?>
         </td>
         <td>
-            <a href="<?php echo $row['urlimage']; ?>">Url Image</a>
+            <img src="<?php echo $row['urlimage']; ?>"></img>
         </td>
         <td>
             <a href="main.php?delete=<?php echo $row['tripid']; ?>">Delete</a>
         </td>
         <td>
             <a href="main.php?update=<?php echo $row['tripid']; ?>">Update</a>
+        </td>
+
     </tr>
 
 

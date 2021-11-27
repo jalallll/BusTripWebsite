@@ -52,6 +52,8 @@ session_start();
 			<br>
 			<label>License Plate Number</label>
 			<input type="text" value="<?php echo $trip_license_plate; ?>" name="input_license_plate">
+			<label>Url Image</label>
+			<input type="text" value="<?php echo $trip_url_image; ?>" name="input_url_image">
 
 			<?php if($btn_val=="Update"): ?>
 			<input type="submit" value="<?php echo $btn_val; ?>" name="update_trip">
