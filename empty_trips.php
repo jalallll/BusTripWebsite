@@ -24,7 +24,8 @@ if (!$result) {
         <th>Start Date</th> 
         <th>End Date</th> 
         <th>Country</th> 
-        <th>License Plate</th> 
+        <th>License Plate</th>
+        <th>Url Image</th> 
     </tr>
 
 <?php 
@@ -47,6 +48,9 @@ while ($row = mysqli_fetch_assoc($result)): ?>
         </td>
         <td>
             <?php echo $row['licenseplatenumber']; ?>
+        </td>
+        <td>
+            <a href="<?php echo $row['urlimage']; ?>">Url Image</a>
         </td>
     </tr>
 

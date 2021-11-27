@@ -19,7 +19,8 @@ if (!$result) {
         <th>Start Date</th> 
         <th>End Date</th> 
         <th>Country</th> 
-        <th>License Plate</th> 
+        <th>License Plate</th>
+        <th>Url Image</th> 
     </tr>
 
 <?php 
@@ -44,13 +45,13 @@ while ($row = mysqli_fetch_assoc($result)): ?>
             <?php echo $row['licenseplatenumber']; ?>
         </td>
         <td>
+            <a href="<?php echo $row['urlimage']; ?>">Url Image</a>
+        </td>
+        <td>
             <a href="main.php?delete=<?php echo $row['tripid']; ?>">Delete</a>
         </td>
         <td>
             <a href="main.php?update=<?php echo $row['tripid']; ?>">Update</a>
-        </td>
-
-        </td>
     </tr>
 
 
