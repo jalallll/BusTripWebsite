@@ -99,7 +99,7 @@ if(isset($_GET['delete_booking'])){
     $url_image = $_POST['input_url_image'];
     $url_image = str_replace(" ", "", $url_image);
     if($url_image==""){
-        $url_image="NULL";
+        $url_image="http://cs3319.gaul.csd.uwo.ca/vm221/a3jqr/null.jpg";
     }
 
 
