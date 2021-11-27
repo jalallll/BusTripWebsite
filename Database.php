@@ -30,7 +30,23 @@
 
         public function query($query)
         {
+            $qr = $query;
+            $type = explode(" ", $qr);
             $result = mysqli_query($this->connection,$query);
+
+            if(!$result){
+                $qr_type = $type[0];
+                if($qr_type=="DELETE"){
+                    die("Can't delete row because it corresponds to another row in another table");
+                }
+                if($qr_type=="UPDATE"){
+                    die("Update failed");
+                }
+                if($qr_type=="INSERT"){
+                    die("Insert failed");
+                }
+                die("Query Failed");
+            }
 
             return $result;
         }
